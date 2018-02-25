@@ -1,22 +1,59 @@
-body {
-    padding-top: 0px;
+body, html {
     padding-bottom: 20px;
     font-family:Tahoma;
+    margin:auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    /*padding-left: 15px;*/
-    padding-right: 15px;
-    padding-left:0;
+    /*padding-left: 2%;
+    padding-right: 2%;
+    padding-top:2%;
+    padding-bottom: 1%;
+    width: 100%;
+    height: auto;
+    border:0;
+    -ms-overflow-style: hidden;
+    overflow-y: hidden;
+    box-sizing: border-box;*/
+    resize: both;
+}
+
+.body-content::after {
+    clear: both;
+    height: auto;
+    resize: both;
+}
+
+obj {    
+    clear: both;
+    height: auto;
+    resize: both;   
+}
+
+obj::after {
+    clear: both;
+    height: auto;
+    resize: both;    
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }
 
 .container {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 0x;
+    padding-left: 0px;
     margin-right: auto;
-    margin-left: 2%;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-top: auto;
 }
 
 /* Carousel */
@@ -25,14 +62,47 @@ body {
     line-height: 1.4;
 }
 
-.page-header ul li {
-    display: inline-block;
+.page-header {
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: 0%;
+  }
+
+.container ul li {
+    display: inline;
     margin-left: 0;
     font-family: Tahoma;
     font-weight: bold;
     font-style: italic;
     font-size: 30px;
-    text-align:center
+}
+
+.headerimg {
+    max-width: 300px;
+}
+
+.headerp {
+    font-family: Tahoma;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 30px;
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+#bod {
+    position: relative;
+    margin-bottom:6%;
+}
+
+#homeContent {
+    margin-left: 10%;
 }
 
 .container ul li img {
@@ -41,7 +111,7 @@ body {
 }
 
 .container ul li span {
-    margin: 10px 10px 0 10px;
+    margin: 0px 10px 0 10px;
 }
 
 .navbar-inverse .navbar-nav li a {
