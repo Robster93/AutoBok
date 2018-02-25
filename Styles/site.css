@@ -221,7 +221,7 @@ obj::after {
 } 
 
  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
- @media screen and (max-width: 700px) {
+ @media screen and (max-width: 700px) and (max-resolution: 1dppx){
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
       float: right;
@@ -243,12 +243,4 @@ obj::after {
       text-align: left;
     }
   } 
-
-  @media handheld {
-    .topnav a:not(:first-child) {display: none;}
-    .topnav a.icon {
-      float: right;
-      display: block;
-    }
-  }
  
