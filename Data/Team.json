@@ -1,0 +1,16 @@
+[
+    {
+        "Vorname": "Frank",
+        "Nachname": "Gscheidle",
+        "Position": "Front Office",
+        "Image": "Images/PassBild.png",
+        "ImBetriebSeit":"1989"
+    },
+    {
+        "Vorname": "Edward",
+        "Nachname": "Bok",
+        "Position": "CEO",
+        "Image": "Images/PassBild.png",
+        "ImBetriebSeit":"1989"
+    }
+]

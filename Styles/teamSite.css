@@ -1,0 +1,20 @@
+hr {
+    color: lightgray;
+}
+
+.EmployeeData {
+    margin:auto;
+}
+.EmployeeData img {
+    float: left;
+    max-width: 50px;
+}
+.EmployeeData p {
+    margin-left: 5%;
+    margin-top: -1%;
+    font-size: 14px;
+}
+.EmployeeData h4 {
+    margin-left: 5%;
+    margin-top: 0;
+}

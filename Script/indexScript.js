@@ -9,11 +9,10 @@ function toggleNavbar() {
 }
 
 function loadTabs(tabName) {
-    x = new String();
-    x = tabName;
-    //document.getElementById("content").load("home.html")
-    var content = document.querySelector('link[rel="import"]').import;
-    document.getElementById("content").innerHTML = '<object type="type/html" data="home.html" style="width:100%; height:auto"></object>';        
+    var iframe = document.getElementById("content_iframe");
+    iframe.src = 'Sub/' + tabName + '.html';
+    
+    //document.getElementById("content").innerHTML = '<object type="type/html" data="Sub/' + tabName + '.html" style="width:100%; height:auto"></object>';        
 }
 
 function setBodyOffset() {
