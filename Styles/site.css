@@ -243,3 +243,12 @@ obj::after {
       text-align: left;
     }
   } 
+
+  @media handheld {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+ 
