@@ -1,0 +1,24 @@
+<style>
+    .person {
+        max-height: 150px;
+        display: inline;
+    }
+</style>
+<div class="container-fluid text-center">
+    <h1>Unser Team</h1>
+    <hr/>
+    <div ng-controller="OffersController as vm">
+        <div class="row" data-ng-repeat="o in vm.offers">
+            <p class="text-center"><strong>{{o.name}}</strong></p>
+            <p class="text-center"><img src="{{o.imageLink}}" class="img-responsive img-rounded person" /></p>
+            <p>Bauhjahr: <strong>{{o.baujahr}}</strong> Farbe: <strong>{{o.farbe}}</strong></p>
+            <p>Beschreibung:<br/>{{o.beschreibung}}</p>
+            <p>Preis: <strong>{{o.preis}}</strong></p>
+            <hr/>
+        </div>
+    </div>
+</div>
+<footer class="body-content">
+    <hr />            
+    <p>&copy; 2018 - Auto-Bok GmbH</p>
+</footer>  

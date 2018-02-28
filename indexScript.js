@@ -1,35 +1,3 @@
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function toggleNavbar() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
-
-function loadTabs(tabName) {
-    //var iframe = document.getElementById("content_iframe");
-    //iframe.src = 'Sub/' + tabName + '.html';
-    
-    //document.getElementById("content").innerHTML = '<object type="type/html" data="Sub/' + tabName + '.html" style="width:100%; height:auto"></object>';        
-}
-
-function setBodyOffset() {
-    var offset = document.getElementById("header").offsetHeight;
-    document.getElementById("main").style.top = offset + 'px';
-    //document.getElementById('content_iframe').style.height = window.innerHeight - offset + 'px';
-}
-
-function setHeight() {
-    var iframe = document.getElementById('content_iframe')
-    var window = iframe.contentWindow;
-    var doc = iframe.contentDocument? iframe.contentDocument: iframe.contentWindow.document;
-    var form = doc.getElementById('content');
-    iframe.style.height = form.offsetHeight;
-}
-
-
 var autobokApp = angular.module('autobokApp', ['ngRoute']);
 
 autobokApp.config(function($routeProvider) {
@@ -39,7 +7,11 @@ autobokApp.config(function($routeProvider) {
     })
     .when('/team', {
         templateUrl : 'Sub/team.html',
-        controller : 'Team'
+        controller : 'TeamController'
+    })
+    .when('/offers', {
+        templateUrl : 'Sub/offers.html',
+        controller : 'OffersController'
     })
     .when('/contact', {
         templateUrl : 'Sub/contact.html',
@@ -63,12 +35,11 @@ autobokApp.service('Map', function() {
     }
 });
 
-autobokApp.controller('Team', ['$http', function($http) {
+autobokApp.controller('TeamController', ['$http', function($http) {
         var vm = this;
         vm.title = "Team";
         vm.team = [];
         vm.getData = function() {
-            //vm.team = loadTeam()
             $http.get("Data/Team.json")
             .then(function(response) {
                 var array = Array.from(response.data);       
@@ -83,9 +54,37 @@ autobokApp.controller('Team', ['$http', function($http) {
 
 autobokApp.controller('ContactController', ['Map', function(Map) {
     var vm = this;
+    vm.title = "Contact";
     Map.init();
 }]);
 
+autobokApp.controller('OffersController', ['$http', function($http) {
+    var vm = this;
+    vm.title = "Offers";
+    vm.offers = [];
+    vm.getData = function() {
+        $http.get("Data/Offers.json")
+        .then(function(response) {
+            var array = Array.from(response.data);       
+            var offersList = [];     
+            for (i = 0; i < array.length; i++) {
+                offersList.push(new Offer(array[i].Name, array[i].Beschreibung, array[i].Baujahr, array[i].Farbe ,array[i].Image, array[i].Preis))
+            }
+            vm.offers = offersList;
+        })};
+    vm.getData();
+}]);
+
+class Offer {
+    constructor(name, beschreibung, baujahr, farbe, imageLink, preis) {
+        this.name = name;
+        this.beschreibung = beschreibung;
+        this.baujahr = baujahr;
+        this.imageLink = imageLink;
+        this.farbe = farbe;
+        this.preis = preis;
+    }
+};
 
 class Employee {
     constructor(vorname, nachname, position, imBetriebSeit, imageLink) {
