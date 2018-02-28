@@ -1,15 +1,23 @@
-<html>
-    <head>
-        <meta charset="utf-8"/>        
-        <title>Auto-Bok</title>
-        <link rel="stylesheet" href="../Styles/site.css" />
-        <link rel="stylesheet" href="../Styles/teamSite.css" />
-        <script src="../Script/teamScript.js" type="text/javascript"></script>
-    </head>
-    <body onload="loadTeam()" id="content" style="margin:auto">
-        <div id="homeContent">            
-            <h1>Unser Team</h1>
-            <div id="team_container" class="EmployeeData"></div>
+<style>
+    .person {
+        max-height: 150px;
+        display: inline;
+    }
+</style>
+<div class="container-fluid text-center">
+    <h1>Unser Team</h1>
+    <hr/>
+    <div ng-controller="Team as vm">
+        <div class="row" data-ng-repeat="m in vm.team">
+            <p class="text-center"><strong>{{m.vorname}} {{m.nachname}}</strong></p>
+            <p class="text-center"><img src="{{m.imageLink}}" class="img-responsive img-rounded person" /></p>
+            <p>{{m.position}}<br />Im Betrieb seit: {{m.imBetriebSeit}}</p>
+            <hr/>
         </div>
-    </body>
-</html>
+    </div>
+</div>
+<footer class="body-content">
+    <hr />            
+    <p>&copy; 2018 - Auto-Bok GmbH</p>
+</footer>
+        

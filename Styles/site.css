@@ -1,7 +1,7 @@
 body, html {
-    padding-bottom: 20px;
     font-family:Tahoma;
     margin:auto;
+    height: 100%;
 }
 
 img {
@@ -23,6 +23,19 @@ img {
     overflow-y: hidden;
     box-sizing: border-box;*/
     resize: both;
+}
+
+#content_iframe {
+    height: auto;
+    position: relative;
+    overflow: auto;
+    margin: 0;
+}
+
+#bod {
+    position: absolute;
+    height: 100%;
+    bottom: 0;
 }
 
 .body-content::after {
@@ -96,10 +109,7 @@ obj::after {
     z-index: 1;
 }
 
-#bod {
-    position: relative;
-    margin-bottom:6%;
-}
+
 
 #homeContent {
     margin-left: 10%;
@@ -173,7 +183,6 @@ obj::after {
 }
 
 .EmployeeData {
-    margin-left: 8%;
     color: grey
 }
 .Employee {

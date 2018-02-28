@@ -5,6 +5,10 @@ hr {
 .EmployeeData {
     margin:auto;
 }
+.EmployeeData li {
+    list-style: none;
+}
+
 .EmployeeData img {
     float: left;
     max-width: 50px;
