@@ -42,8 +42,25 @@ autobokApp.config(function($routeProvider) {
         controller : 'Team'
     })
     .when('/contact', {
-        templateUrl : 'Sub/contact.html'
+        templateUrl : 'Sub/contact.html',
+        controller : 'ContactController'
     })
+});
+
+autobokApp.service('Map', function() {
+    this.init = function() {        
+    var pos = {lat: 48.6988318,lng: 9.0063085};
+        var options = {
+            center: new google.maps.LatLng(pos),
+            zoom: 15,
+            disableDefaultUI: true,            
+            mapTypeId: google.maps.MapTypeId.HYBRID  
+        }        
+        this.map = new google.maps.Map(
+            document.getElementById("map"), options
+        );
+        var marker = new google.maps.Marker({position: pos, map: this.map });
+    }
 });
 
 autobokApp.controller('Team', ['$http', function($http) {
@@ -64,6 +81,12 @@ autobokApp.controller('Team', ['$http', function($http) {
         vm.getData();
 }]);
 
+autobokApp.controller('ContactController', ['Map', function(Map) {
+    var vm = this;
+    Map.init();
+}]);
+
+
 class Employee {
     constructor(vorname, nachname, position, imBetriebSeit, imageLink) {
         this.vorname = vorname;
@@ -72,15 +95,4 @@ class Employee {
         this.imageLink = imageLink;
         this.position = position;
     }
-}
-
-function myMap() {
-    var pos = {lat: 48.6988318,lng: 9.0063085};
-    var mapOptions = {
-        center: new google.maps.LatLng(pos),
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.HYBRID
-    }
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    var marker = new google.maps.Marker({position: pos, map: map });
-}
+};
