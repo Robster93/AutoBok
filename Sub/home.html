@@ -1,13 +1,57 @@
-<!Doctype html>
-
-        <div class="row text-center">
-            <div class="row content">
-                <img src="Images/Autohaus.jpg" class="img-responsive" />
-                <h1>Unser Unternehmen</h1>
-                <p>Wir sind ein top Unternehmen...</p>
+<style>
+    .btn-panel {
+        background: #f5f5f5;
+    }
+    .panel-collapse-li {
+        width: 170px;
+        float: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<div class="row text-center">
+    <img src="Images/Autohaus.jpg" class="img-responsive" />     
+    <div class="jumbotron">             
+        <h2>Über uns</h1>            
+        <p>Wir sind ein top Unternehmen...</p>
+    </div>        
+</div>    
+<div class="row text-center">
+    <h3>Unsere Leistungen</h2>                       
+</div>
+<div class="row text-center">
+    <ul class="list-inline" style="display:inline-block; overflow:auto; margin-left:10px; margin-right:10px">
+        <li class="panel-collapse-li">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <button class="btn btn-panel" data-toggle="collapse" data-target="#service">Service</button>
+                        </h4>
+                    </div>
+                    <div id="service" class="panel-collapse collapse">
+                        <div class="panel-body">Wir bieten Service aller Art...</div>
+                    </div>
+                </div>
             </div>
-        </div>    
-        <footer class="body-content">
-                <hr />            
-                <p>&copy; 2018 - Auto-Bok GmbH</p>
-        </footer>
+        </li>
+        <li class="panel-collapse-li">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <button class="btn btn-panel" data-toggle="collapse" data-target="#otherservice">Service</button>
+                        </h4>
+                    </div>
+                    <div id="otherservice" class="panel-collapse collapse">
+                        <div class="panel-body">Wir bieten Service aller Art...</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<footer class="body-content">
+    <hr />            
+    <p>&copy; 2018 - Auto-Bok GmbH</p>
+</footer>
