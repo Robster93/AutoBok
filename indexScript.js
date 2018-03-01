@@ -17,6 +17,10 @@ autobokApp.config(function($routeProvider) {
         templateUrl : 'Sub/contact.html',
         controller : 'ContactController'
     })
+    .when('/EditOffers', {
+        templateUrl : 'Sub/editOffers.html',
+        controller : 'EditOffersController'
+    })
 });
 
 autobokApp.service('Map', function() {
@@ -74,6 +78,39 @@ autobokApp.controller('OffersController', ['$http', function($http) {
         })};
     vm.getData();
 }]);
+
+autobokApp.controller('EditOffersController', ['$http', function($http) {
+    var vm = this;
+    vm.offers = [];
+    vm.getData = function() {
+        $http.get("Data/Offers.json")
+        .then(function(response) {
+            var array = Array.from(response.data);       
+            var offersList = [];     
+            for (i = 0; i < array.length; i++) {
+                offersList.push(new Offer(array[i].Name, array[i].Beschreibung, array[i].Baujahr, array[i].Farbe ,array[i].Image, array[i].Preis))
+            }
+            vm.offers = offersList;
+        })};
+    vm.getData();
+    vm.addRow = function() {
+        vm.offers.push(new Offer("","","","","",""));
+    };
+    vm.removeRow = function(offer) {
+        for (i = 0; i< vm.offers.length; i++) {
+            if (vm.offers[i] === offer) {
+                vm.offers.splice(i, 1);
+            }
+        }
+    };
+    vm.saveData = function() {
+        $http.post('Data/Offers.json', JSON.stringify(vm.offers))
+        .then(function(data) {
+            vm.message = "Data saved!"
+        })
+    };
+    vm.message = "";
+}])
 
 class Offer {
     constructor(name, beschreibung, baujahr, farbe, imageLink, preis) {

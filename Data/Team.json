@@ -1,58 +1,37 @@
 [
         {
+            "Vorname": "Edward",
+            "Nachname": "Bok",
+            "Position": "Geschäftsführer und KFZ-Meister",
+            "Image": "Images/Team/DSC00768.JPG",
+            "ImBetriebSeit":"1980"
+        },
+        {
             "Vorname": "Frank",
             "Nachname": "Gscheidle",
-            "Position": "Front Office",
-            "Image": "Images/PassBild.png",
+            "Position": "Verwaltung und Verkauf",
+            "Image": "Images/Team/DSC00765.JPG",
             "ImBetriebSeit":"1989"
         },
         {
-            "Vorname": "Edward",
-            "Nachname": "Bok",
-            "Position": "CEO",
-            "Image": "Images/PassBild.png",
-            "ImBetriebSeit":"1989"
+            "Vorname": "Johanna",
+            "Nachname": "Krühne",
+            "Position": "Verwaltung und Verkauf",
+            "Image": "Images/Team/DSC00769.JPG",
+            "ImBetriebSeit":"1999"
         },
         {
-            "Vorname": "Edward",
-            "Nachname": "Bok",
-            "Position": "CEO",
-            "Image": "Images/PassBild.png",
-            "ImBetriebSeit":"1989"
+            "Vorname": "Erdogan",
+            "Nachname": "Cebeci",
+            "Position": "KFZ-Mechatroniker",
+            "Image": "Images/Team/DSC00772.JPG",
+            "ImBetriebSeit":"2007"
         },
         {
-            "Vorname": "Edward",
-            "Nachname": "Bok",
-            "Position": "CEO",
-            "Image": "Images/PassBild.png",
-            "ImBetriebSeit":"1989"
-        },
-        {
-            "Vorname": "Edward",
-            "Nachname": "Bok",
-            "Position": "CEO",
-            "Image": "Images/PassBild.png",
-            "ImBetriebSeit":"1989"
-        },
-        {
-            "Vorname": "Edward",
-            "Nachname": "Bok",
-            "Position": "CEO",
-            "Image": "Images/PassBild.png",
-            "ImBetriebSeit":"1989"
-        },
-        {
-            "Vorname": "Edward",
-            "Nachname": "Bok",
-            "Position": "CEO",
-            "Image": "Images/PassBild.png",
-            "ImBetriebSeit":"1989"
-        },
-        {
-            "Vorname": "Edward",
-            "Nachname": "Bok",
-            "Position": "CEO",
-            "Image": "Images/PassBild.png",
-            "ImBetriebSeit":"1989"
+            "Vorname": "Selcuk",
+            "Nachname": "Cebeci",
+            "Position": "KFZ-Mechatroniker",
+            "Image": "Images/Team/DSC00773.JPG",
+            "ImBetriebSeit":"2017"
         }
     ]

@@ -1,6 +1,8 @@
 <style>
     .btn-panel {
         background: #f5f5f5;
+        height: 100%;
+        width: 100%;
     }
     .panel-collapse-li {
         width: 170px;
@@ -8,9 +10,48 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .carousel-img {
+        max-height: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .panel-img {
+        height: 60px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 </style>
 <div class="row text-center">
-    <img src="Images/Autohaus.jpg" class="img-responsive" />     
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="Images/Home/DSC00759.JPG" class="img-responsive carousel-img" />
+            </div>
+            <div class="item">
+                <img src="Images/Home/DSC00761.JPG" class="img-responsive carousel-img" />
+            </div>
+            <div class="item">
+                <img src="Images/Home/DSC00762.JPG" class="img-responsive carousel-img" />
+            </div>
+            <div class="item">
+                <img src="Images/Home/DSC00763.JPG" class="img-responsive carousel-img" />
+            </div>
+            <div class="item">
+                <img src="Images/Home/DSC00764.JPG" class="img-responsive carousel-img" />
+            </div>
+        </div>
+        <a class="left carousel-control" data-slide="prev">
+        </a>
+        <a class="right carousel-control"  data-slide="next">
+        </a>
+    </div>
     <div class="jumbotron">             
         <h2>Über uns</h1>            
         <p>Wir sind ein top Unternehmen...</p>
@@ -26,10 +67,12 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <button class="btn btn-panel" data-toggle="collapse" data-target="#service">Service</button>
+                            <button class="btn btn-panel" data-toggle="collapse" data-target="#toytotaPanel">
+                                <img src="Images/Toyota_Logo_silver.svg" class="img-responsive panel-img"/>Neuwagen
+                            </button>
                         </h4>
                     </div>
-                    <div id="service" class="panel-collapse collapse">
+                    <div id="toytotaPanel" class="panel-collapse collapse">
                         <div class="panel-body">Wir bieten Service aller Art...</div>
                     </div>
                 </div>
@@ -40,10 +83,44 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <button class="btn btn-panel" data-toggle="collapse" data-target="#otherservice">Service</button>
+                            <button class="btn btn-panel" data-toggle="collapse" data-target="#mitsubishiPanel">                                
+                                <img src="Images/Mitsubishi_Motors_SVG_logo_2.svg" class="img-responsive panel-img"/>Neuwagen
+                            </button>
                         </h4>
                     </div>
-                    <div id="otherservice" class="panel-collapse collapse">
+                    <div id="mitsubishiPanel" class="panel-collapse collapse">
+                        <div class="panel-body">Wir bieten Service aller Art...</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="panel-collapse-li">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <button class="btn btn-panel" data-toggle="collapse" data-target="#tüvPanel">                                
+                                <img src="Images/TÜV_Süd_logo.svg" class="img-responsive panel-img"/>TÜV / AU
+                            </button>
+                        </h4>
+                    </div>
+                    <div id="tüvPanel" class="panel-collapse collapse">
+                        <div class="panel-body">Wir bieten Service aller Art...</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="panel-collapse-li">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <button class="btn btn-panel" data-toggle="collapse" data-target="#werkstattPanel">                                
+                                <i class="fa fa-wrench panel-img"></i><br/>Werkstattleistungen
+                            </button>
+                        </h4>
+                    </div>
+                    <div id="werkstattPanel" class="panel-collapse collapse">
                         <div class="panel-body">Wir bieten Service aller Art...</div>
                     </div>
                 </div>

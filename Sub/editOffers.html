@@ -1,0 +1,30 @@
+<div class="row text-center" ng-controller="EditOffersController as vm">
+    <h1>Edit Offers</h1>
+    <hr/>
+    <button class="btn btn-primary" ng-click="vm.addRow()">Add</button>
+    <button class="btn btn-success" ng-click="vm.saveData()">Save</button>
+    <strong>{{vm.message}}</strong> 
+    <div class="table-responsive text-left" >
+        <table class="table table-hover">
+            <thead>
+                <th>Model</th>
+                <th>Baujahr</th>
+                <th>Farbe</th>
+                <th>Preis</th>
+                <th>Beschreibung</th>
+                <th>Bild</th>
+            </thead>
+            <tbody data-ng-repeat="o in vm.offers">
+                <tr>
+                    <td><textarea class="form-control" rows="1">{{o.name}}</textarea></td>
+                    <td><textarea class="form-control" rows="1">{{o.baujahr}}</textarea></td>
+                    <td><textarea class="form-control" rows="1">{{o.farbe}}</textarea></td>
+                    <td><textarea class="form-control" rows="1">{{o.preis}}</textarea></td>
+                    <td><textarea class="form-control" rows="3">{{o.beschreibung}}</textarea></td>
+                    <td>{{o.imageLink}}</td>
+                    <td><button class="btn btn-primary" ng-click="vm.removeRow(o)">X</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
